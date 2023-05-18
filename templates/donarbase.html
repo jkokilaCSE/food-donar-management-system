@@ -4,7 +4,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>ZERO FOOD</title>
+  <title>Terra Feed</title>
 
   <style media="screen">
     a:link {
@@ -19,7 +19,7 @@
 
     header {
       position: fixed;
-      background: #22242A;
+      background: white;
       padding: 20px;
       width: 100%;
 
@@ -58,7 +58,7 @@
     }
 
     .sidebar {
-      background: #2f323a;
+      background: #fff;
       margin-top: 70px;
       padding-top: 30px;
       position: fixed;
@@ -95,7 +95,7 @@
     }
 
     .sidebar a:hover {
-      background: #19B3D3;
+      background: #C8A951;
     }
 
     .sidebar i {
@@ -165,27 +165,26 @@
       <i class="fas fa-bars" id="sidebar_btn"></i>
     </label>
     <div class="left_area">
-      <h3>Food Donation</h3>
+      <h3 style="color: #728C69;">Food Donation</h3>
     </div>
     <div class="right_area">
-      <a href="/logout" class="logout_btn">Logout</a>
+      <a style="color: white;background-color: #B2D3C2;border-radius: 2px;" href="/logout" class="logout_btn">Logout</a>
     </div>
   </header>
   <!--header area end-->
   <!--sidebar start-->
-  <div class="sidebar">
+  <div class="sidebar" >
     <center>
 
-      <img src="{% static "images/student1.png" %}" class="profile_image" alt="">
+      <img src="{% static 'images/student1.png' %}" class="profile_image" alt="">
       <h4>{{company_name}}</h4>
 
     </center>
-
-    <a href="/donar-dashboard"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
-    <a href="/donar-donation"><i class="fas fa-hands-helping"></i><span>Donation</span></a>
-    <a href="/claimed-donation"><i class="fas fa-list"></i><span>Claimed Donation</span></a>
-    <a href="/donar-donation-history"><i class="fas fa-history"></i><span>History</span></a>
-
+<div style="margin-top: 70px;">
+    <b><a style="color: black;" href="/donar-dashboard"><i class="fas fa-desktop"></i><span>Dashboard</span></a></b>
+    <b> <a style="color: black;" href="/donar-donation"><i class="fas fa-hands-helping"></i><span>Donation</span></a></b>
+    <b> <a style="color: black;" href="/donar-donation-history"><i class="fas fa-history"></i><span>History</span></a></b>
+  </div>
   </div>
   <!--sidebar end-->
 
@@ -198,7 +197,7 @@
     {% endblock content %}
 
 
-    <br><br><br>
+    <br><br><br><br>
     {% include "footer.html" %}
   </div>
   <!--content end-->

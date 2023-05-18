@@ -38,14 +38,15 @@
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 </head>
+<body style="background-color: #FEF9F3;">
+  
+
 <br>
 
 {%include 'donar_dashboard_cards.html'%}
 
 <br><br>
-<div class="w3-panel w3-blue ">
-  <p>Notice Board</p>
-</div><br>
+<br>
 {%for n in notice%}
 <div class="alert">
   <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
@@ -53,7 +54,7 @@
 </div>
 {%endfor%}
 
-
+</body>
 
 
 {% endblock content %}

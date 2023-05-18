@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-
+  
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -9,50 +9,51 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-  <style type="text/css">
-    .bs-example {
-      margin: 0px;
-
-    }
-
-    .navbar-brand {
-      font-size: 20px;
-      font-family: sans-serif;
-
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap" rel="stylesheet">
+  <link href=
+  "https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+            rel="stylesheet">
 </head>
 
 <body>
 
+<!-- component -->
+<nav  style="margin-block-start: auto;height: 60px;" id="header" class="w-full z-30 top-10 py-1 bg-white shadow-lg border-b border-blue-400 mt-24">
+  <div style="    display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: space-between;
+  margin-top: 0px;
+" class="w-full flex items-center justify-between mt-0 px-6 py-2">
+     <label for="menu-toggle" class="cursor-pointer md:hidden block">
+        <svg class="fill-current text-blue-600" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+           <title>menu</title>
+           <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+        </svg>
+     </label>
+     <input class="hidden" type="checkbox" id="menu-toggle">
+     
+     <div style="" class="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-1" id="menu">
+        <nav style="height:0px;">
+           <ul style="color: #E3c565;margin-top:-40px;" class="md:flex items-center justify-between text-base text-blue-600 pt-4 md:pt-0">
+              <li ><a style="color:  #E3c565; font-family: 'Inter', sans-serif;;" class="inline-block no-underline hover:text-black font-medium text-lg py-2 px-4 lg:-ml-2" href="/">Home</a></li>
+              <li><a style="color: #E3c565;font-family: 'Inter', sans-serif;" class="inline-block no-underline hover:text-black font-medium text-lg py-2 px-4 lg:-ml-2" href="/aboutus">About Us</a></li>
+              <li><a  style="color:  #E3c565;font-family: 'Inter', sans-serif;" class="inline-block no-underline hover:text-black font-medium text-lg py-2 px-4 lg:-ml-2" href="/ngoclick">NGO</a></li>
+              <li><a style="color:  #E3c565;font-family: 'Inter', sans-serif;" class="inline-block no-underline hover:text-black font-medium text-lg py-2 px-4 lg:-ml-2" href="/donarclick">Donar</a></li>
 
-
-  <div class="bs-example">
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
-      <a href="/" class="navbar-brand">ZERO FOOD</a>
-      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-        <div class="navbar-nav">
-          <a href="/" class="nav-item nav-link active">Home</a>
-          <a href="/ngoclick" class="nav-item nav-link">NGO</a>
-          <a href="/donarclick" class="nav-item nav-link">Donar</a>
-
-
+           </ul>
+        </nav>
+     </div>
+     
+     <div class="order-2 md:order-3 flex flex-wrap items-center justify-end mr-0 md:mr-4" id="nav-content">
+        <div class="auth flex items-center w-full md:w-full">
+         <b><a href="/"> <div style="font-size: 30px;font-family: Verdana, Geneva, Tahoma, sans-serif;"  class="inline-block no-underline hover:text-black font-medium text-lg py-2 px-4 lg:-ml-2"> <span style="font-family: 'Henny Penny', cursive;color: #c8a951;">Terra</span> <span style="font-family: 'Inter', sans-serif;color: #728c69;">Feed!</span>  </div></a></b>
         </div>
-
-        <div class="navbar-nav">
-          <a href="/aboutus" class="nav-item nav-link">About Us</a>
-          <a href="/contactus" class="nav-item nav-link">Contact Us</a>
-        </div>
-      </div>
-    </nav>
+     </div>
   </div>
-
-
+</nav>
 </body>
-
 </html>

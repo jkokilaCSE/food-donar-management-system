@@ -7,13 +7,19 @@ from django.contrib.auth.decorators import login_required,user_passes_test
 from django.conf import settings
 from django.core.mail import send_mail
 from django.contrib import messages
+from django.contrib.auth import get_user_model
+from django.contrib.auth.models import User
 
 # Create your views here.
 
 def home_view(request):
     if request.user.is_authenticated:
         return HttpResponseRedirect('afterlogin')
-    return render(request,'index.html')
+    donations = models.Donation.objects.all()
+
+    context = {'donations':donations}
+    print(donations)
+    return render(request,'index.html',context)
     # return render(request,'index.html')
 
 #for showing signup/login button for NGO
@@ -104,6 +110,13 @@ def ngo_donation_view(request):
 
     context = {'donations':donations, 'id':claimed[0].id}
     return render(request,'ngo_donation.html', context)
+
+def claim_food(request,pk1):
+    don = models.Donation.objects.get(id=pk1)
+    don.status=True
+    don.save()
+    print("claimed")
+    return redirect("donar-donation-history")
 
 @login_required(login_url='ngologin')
 @user_passes_test(is_ngo)
@@ -215,3 +228,20 @@ def contactus_view(request):
             send_mail(str(name)+' || '+str(email),message,settings.EMAIL_HOST_USER, settings.EMAIL_RECEIVING_USER, fail_silently = False)
             return render(request, 'contactussuccess.html')
     return render(request, 'contactus.html', {'form':sub})
+
+def login_view(request):
+    return render(request,'login.html')
+
+def register_view(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        email = request.POST['email']
+        # You can add more fields if needed
+
+        # Create a new user
+        user = User.objects.create_user(username=username, password=password, email=email)
+        # Perform additional operations if required
+        return render(request,'login.html')
+    else:
+        return render(request,'register.html')

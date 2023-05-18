@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en" dir="ltr">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&family=Inter&family=Tiro+Tamil&display=swap" rel="stylesheet">
 <head>
   <meta charset="utf-8">
   <title></title>
@@ -10,9 +12,11 @@
     .jumbotron {
       margin-top: 0px;
       margin-bottom: 0px;
-      background-image: url('{% static "images/home1.jpg" %}');
-      background-size: cover;
+      /* background-image: url('{% static "images/h.png" %}'); */
+     
+      
       background-repeat: no-repeat;
+      
       padding-bottom: 290px;
     }
 
@@ -48,29 +52,96 @@
 
 </head>
 
-<body>
+<body style=" background-color: #FEF9F3;width: 100%;">
   {% include "navbar.html" %}
   <br>
   <br>
-  <div class="jumbotron" style="margin-bottom: 0px;margin-top: 0px;">
+  <br><br><br>
+ <span> <img style="height: 400px;width: 600px;margin-top: -80px;" src="{% static 'images/h.png' %}" alt=""></span>
+  <div style="margin-top:- 500px;">
+  <div  class="jumbotron" style="margin-bottom: 0px; background-color: #FEF9F3;">
     <br>
-    <h1 class="display-4" style="color: #007FFF; font-family: Brush Script MT, Brush Script Std, cursive; font-size:80px;">Welcome</h1>
+   <b> <h1 class="display-4" style="color: #0e0f0f;margin-top: -450px;margin-right:-500px; font-family: 'Tiro Tamil', serif; font-size: 20px;"><b> “தனி ஒரு மனிதனுக்கு <br><br> உணவில்லை  எனில் <br><br>
+      இந்த ஜகத்தினை <br><br> அழித்திடுவோம் !”</b></h1></b>
 
     <br><br>
-    <p style="color: white; margin-top: -75px;">Sharing is Carring.</p>
+    <p style="color: white; margin-top: -350px;"></p>
     <br><br><br><br><br>
-    <p class="lead">
-      <a class="btn btn-primary btn-lg" href="donarsignup" role="button">Apply as a Donar</a>
+    <p class="lead" style="margin-right:-500px;">
+      <a style="color: white;background-color: #B2D3C2;border: none;" class="btn btn-primary btn-lg" href="donarsignup" role="button">Donate</a>
     </p>
     <br><br>
   </div>
+</div>
 
   <br>
   <br>
   <br><br>
 
-  {% include "ngo_donar_card.html" %}
 
+  <style type="text/css">
+    .card-content {
+        display: flex;
+    }
+
+    .card-text {
+        margin-left: 10px;
+      }
+</style>
+
+</head>
+<!-- ================================================================================================== -->
+<div class="note">
+  <p style="color: #c8a951; font-weight: bold; font-size: 30px;margin-top: -50px;">Available</p>
+</div>
+<div class="row row-cols-1 row-cols-md-2 g-4" style="   margin-left: 70px;margin-top: 50px;">
+  {% for d in donations %}
+  {% if d.status %}
+  {% else %}
+    <div style="margin-left: 40px; margin-bottom: 25px;">
+        <div class="card" style="width: 1000px;height: 100px;background-color: #B2D3C2;">
+            {% if d.foodImage %}
+            <div class="col-md-4">
+                <img src="{{ d.foodImage.url }}" class="card-img-top" alt="..." style="height:80px; width: 80px;">
+            </div>
+            {% else %}
+            <div class="col-md-4">
+                <img src="{{ 'static/images/default.jpg' }}" class="card-img-top" alt="..." style="height:42px">
+            </div>
+            {% endif %}</div>
+            <div class="card-body" style="display: flex;
+                  flex-direction: row-reverse;
+                  flex-wrap: wrap;
+                  align-content: center;
+                  justify-content: space-evenly;
+                  align-items: baseline;">
+                <h5 class="card-title">{{ d.foodName }}</h5>
+                <div class="card-content">
+                    <h6 class="card-title">Category:</h6>
+                    <p class="card-text">{{ d.inputState }}</p>
+                </div>
+                <div class="card-content">
+                    <h6 class="card-title">Quantity:</h6>
+                    <p class="card-text">{{ d.quantity }}</p>
+                </div>
+                <div class="card-content">
+                    <h6 class="card-title">Hours Passed:</h6>
+                    <p class="card-text">{{ d.hours }}</p>
+                </div>
+                <p class="card-text"><small class="text-muted">Last updated on {{ d.donationdate }}</small></p>
+                {% if d.status %}
+                <h5 class="card-title" style="color:green;">Claimed</h5>
+                {% else %}
+                <h5 class="card-title" style="color:red;">Not Claimed</h5>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+  {% endfor %}
+</div>
+<!-- =========================================================================================================== -->
+</div>
   <br><br>
   <br>
   <br>

@@ -23,11 +23,13 @@
     </style>
 
 </head>
+<body style="background-color: #FEF9F3;">
+    
 
-<div class="note">
-    <p style="color: #4682B4; font-weight: bold; font-size: 20px;">HISTORY</p>
+    <div class="note">
+    <p style="color: #c8a951; font-weight: bold; font-size: 20px;background-color: #FEF9F3;">HISTORY</p>
   </div>
-<div class="row row-cols-1 row-cols-md-2 g-4" style="margin-left: 70px;">
+<div class="row row-cols-1 row-cols-md-2 g-4" style="margin-left: 70px;background-color: #FEF9F3;">
     {% for d in donations %}
     <div style="margin-left: 40px; margin-bottom: 25px;">
         <div class="card" style="width: 233px;">
@@ -61,11 +63,15 @@
                 {% else %}
                 <h5 class="card-title" style="color:red;">Not Claimed</h5>
                 {% endif %}
-            </div>
+                <button style="background-color: #8fdfb5;border: none;" class="bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    <a style="color: white;" href="{% url 'claim_food' pk1=d.id %}">Claim</a>
+                  </button>
+                            
         </div>
     </div>
+</div>
     {% endfor %}
 </div>
 
-
+</body>
 {% endblock content %}

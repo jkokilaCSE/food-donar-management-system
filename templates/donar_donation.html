@@ -8,6 +8,8 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </head>
+<body style="background-color: #FEF9F3;">
+  
 
 {% for message in messages  %}
 {% comment %} <p id="messages">{{message}}</p> {% endcomment %}
@@ -16,7 +18,7 @@
 </div>
 {% endfor %}
 <div class="note">
-  <p style="color: #4682B4; font-weight: bold; font-size: 20px;">DONATE</p>
+  <p style="color: #C8A951; font-weight: bold; font-size: 20px;">DONATE</p>
 </div>
 <form class="row g-3" style="margin: 10px" action="" method="POST" enctype="multipart/form-data">
   {% csrf_token %}
@@ -38,7 +40,11 @@
   </div>
   <div class="col-md-6">
     <label for="foodName" class="form-label">Food Name</label>
-    <input type="text" class="form-control" id="foodName" name="foodName" placeholder="Use ',' for multiple foods">
+    <input type="text" class="form-control" id="foodName" name="foodName" placeholder="Use ',' for multiple foods"><br>
+  </div>
+  <div class="col-md-6">
+    <label for="foodName" class="form-label">Email</label>
+    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your Email">
   </div>
   <div class="col-md-6">
     <label for="foodImage" class="form-label">Food Image</label>
@@ -53,7 +59,7 @@
       <option>both</option>
     </select>
   </div>
-  <div class="col-md-6" style="margin-top:-65px; margin-left:610px">
+  <div class="col-md-6" style="">
     <label for="quantity" style="margin-top:20px; margin-left:15px">Quantity (between 1kg and 100kg):</label>
     <input type="number" id="quantity" name="quantity" min="1" max="100" style="margin-top:20px; height: 35px">
   </div>
@@ -63,11 +69,12 @@
   </div>
   <div class="col-md-6" style="margin-left: 16px;">
     <label for="description" class="form-label">Additional Information</label>
-    <input type="text" class="form-control" id="description" name="description">
+    <input type="text" class="form-control" id="description" name="description"><br>
   </div>
-  
+  <br>
   <div class="col-12">
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button style="background-color: #B2D3C2;border: none;" type="submit" class="btn btn-primary">Submit</button>
   </div>
 </form>
+</body>
 {% endblock content %}

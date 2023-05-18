@@ -25,7 +25,7 @@ admin.site.index_title = "Welcome to Zero Food Researcher Portal"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.home_view,name=''),
+    path('home',views.home_view,name=''),
 
     path('ngoclick', views.ngoclick_view,name='ngoclick'),
     path('donarclick', views.donarclick_view,name='donarclick'),
@@ -50,5 +50,7 @@ urlpatterns = [
 
     path('aboutus', views.aboutus_view,name='aboutus'),
     path('contactus', views.contactus_view,name='contactus'),
-
+    path('claim_food/<int:pk1>', views.claim_food,name='claim_food'),
+    path('', views.login_view,name='login'),
+    path('register', views.register_view,name='register'),
 ]
