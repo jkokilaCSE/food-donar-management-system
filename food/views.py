@@ -25,14 +25,14 @@ def home_view(request):
 
 #for showing signup/login button for NGO
 def ngoclick_view(request):
-    if request.user.is_authenticated:
-        return HttpResponseRedirect('afterlogin')
+    # if request.user.is_authenticated:
+    #     return HttpResponseRedirect('afterlogin')
     return render(request,'ngoclick.html')
 
 #for showing signup/login button for Donar
 def donarclick_view(request):
-    if request.user.is_authenticated:
-        return HttpResponseRedirect('afterlogin')
+    # if request.user.is_authenticated:
+    #     return HttpResponseRedirect('afterlogin')
     return render(request,'donarclick.html')
 
 def ngo_signup_view(request):
