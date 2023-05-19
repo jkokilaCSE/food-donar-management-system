@@ -3,16 +3,28 @@
 
 <br>
 <br>
+<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+<body style="background-color: #FEF9F3;">
+ <br><br><br> 
 
-<div class="jumbotron" style="margin-bottom:0px;">
-  <h1 class="display-4">Hello, Donar</h1>
-  <p class="lead">Welcome to Food Donation Management System.</p>
-  <hr class="my-4">
-  <p>You can access various features after Login.</p>
-  <p class="lead">
-    <a class="btn btn-primary btn-lg" href="/donarsignup" role="button">New Donar</a>
-    <a class="btn btn-primary btn-lg" href="/donarlogin" role="button">Login</a>
-  </p>
+<div class="container mx-auto px-4" >
+  <div class="max-w-md mx-auto bg-white rounded-lg overflow-hidden shadow-lg">
+    <div class="p-4">
+      <h1 class="text-4xl font-bold mb-2">Hello, Donar</h1>
+      <p class="text-xl text-gray-600 mb-4">Welcome to Food Donation Management System.</p>
+      <hr class="my-4">
+      <p class="text-lg text-gray-700">You can access various features after login.</p>
+      <div class="mt-8" style="display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-content: center;
+      justify-content: center;
+      align-items: center;">
+        <a style="background-color: #B2D3C2;" href="/donarsignup" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-lg mr-4">New Donar</a>
+        <a style="background-color: #B2D3C2;" href="/donarlogin" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-lg">Login</a>
+      </div>
+    </div>
+  </div>
 </div>
-
+</body>
 {% endblock content %}

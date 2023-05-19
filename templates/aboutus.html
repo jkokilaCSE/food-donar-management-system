@@ -5,7 +5,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>ZERO FOOD</title>
+  <link rel="icon" href="static/images/logo.png" type="image/icon type">
+
+  <title>Tera feed</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+
   <style media="screen">
     .jumbotron {
       margin-top: 0px;
@@ -24,22 +28,19 @@
   <title></title>
 </head>
 
-<body>
+<body style="background-color: #FEF9F3;">
 
   {% include "navbar.html" %}
-  <br><br>
-  <center>
-    <h3 class='alert alert-success' style="margin-bottom:0px;">About Us !</h3>
-  </center>
-  <div class="jumbotron" style="margin-bottom: 0px;margin-top: 0px;">
-    <h1 class="display-4">Hello</h1>
-    <p class="lead">A service dedicated to Donar and NGO. We provide online resources, professional support
-      and guidance to all our Donars, NGOs whenever, and from wherever they have chosen to Donate.</p>
-    <hr class="my-4">
-    <p>Explore our Website.</p>
-    <p class="lead">
-      <a class="btn btn-primary btn-lg" href="/" role="button">HOME</a>
-    </p>
+  <br><br><br><br>
+  <div class="container mx-auto px-4">
+    <h3 class="bg-green-500 text-white px-4 py-2 mb-0">About Us!</h3>
+    <div class="bg-white rounded-lg overflow-hidden shadow-lg p-6">
+      <p class="mb-4">At Terra Feed, we are passionate about addressing the global issue of food waste through our waste food management application. Our user-friendly web platform connects surplus food with those in need, promoting responsible waste management practices. With real-time notifications and a double verification process, we ensure efficient and secure food redistribution. We go beyond just connecting donors and recipients by providing guidelines for proper disposal of spoiled food and emphasizing sustainable practices. Through analytics and insights, we track our collective impact and continuously improve our platform. Join us in creating a more sustainable future where no edible food goes to waste and everyone has access to nutritious meals.</p>
+      <p style="font-size:20px;" class="mb-4">Explore our Website.</p>
+      <p class="lead">
+        <a style="background-color: #B2D3C2;" class="bg-blue-500 text-white px-4 py-2 rounded-lg" href="/home">HOME</a>
+      </p>
+    </div>
   </div>
 
   {% include "footer.html" %}
