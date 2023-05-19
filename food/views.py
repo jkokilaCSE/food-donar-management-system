@@ -9,6 +9,7 @@ from django.core.mail import send_mail
 from django.contrib import messages
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login
 
 # Create your views here.
 
@@ -87,6 +88,10 @@ def afterlogin_view(request):
         return redirect('ngo-dashboard')
     elif is_donar(request.user):
         return redirect('donar-dashboard')
+    else:
+        donations = models.Donation.objects.all()
+        context = {'donations':donations}
+        return render(request,'index.html',context)
 
 #for NGO LOGIN SECTION
 @login_required(login_url='ngologin')
@@ -229,8 +234,22 @@ def contactus_view(request):
             return render(request, 'contactussuccess.html')
     return render(request, 'contactus.html', {'form':sub})
 
+
 def login_view(request):
-    return render(request,'login.html')
+    if request.method == 'POST':
+        username = request.POST['email']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            print("login sucessfully....")
+            return redirect('home')  # Replace 'home' with the name of your home view
+        else:
+            # Invalid credentials, display an error message
+            error_message = 'Invalid username or password.'
+            return render(request, 'login.html', {'error_message': error_message})
+    else:
+        return render(request, 'login.html')
 
 def register_view(request):
     if request.method == 'POST':
