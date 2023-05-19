@@ -22,7 +22,7 @@
 
     header {
       position: fixed;
-      background: #22242A;
+      background: white;
       padding: 20px;
       width: 100%;
 
@@ -61,7 +61,7 @@
     }
 
     .sidebar {
-      background: #2f323a;
+      background: white;
       margin-top: 70px;
       padding-top: 30px;
       position: fixed;
@@ -98,7 +98,7 @@
     }
 
     .sidebar a:hover {
-      background: #19B3D3;
+      background: #C8A951;
     }
 
     .sidebar i {
@@ -118,9 +118,11 @@
     }
 
     label #sidebar_btn:hover {
-      color: #19B3D3;
+      color: #728c69;
     }
-
+    label #sidebar_btn{
+      color: #0a0a0a;
+    }
     #check:checked~.sidebar {
       left: -190px;
     }
@@ -164,14 +166,14 @@
   <input type="checkbox" id="check">
   <!--header area start-->
   <header>
-    <label for="check">
+    <label for="check" >
       <i class="fas fa-bars" id="sidebar_btn"></i>
     </label>
     <div class="left_area">
-      <h3>Food Donation</h3>
+      <h3 style="color: #728C69;">Food Donation</h3>
     </div>
     <div class="right_area">
-      <a href="/logout" class="logout_btn">Logout</a>
+      <a style="background-color: #B2D3C2;" href="/logout" class="logout_btn">Logout</a>
     </div>
   </header>
   <!--header area end-->
@@ -180,13 +182,13 @@
     <center>
 
       <img src="{% static "images/teacher.png" %}" class="profile_image" alt="">
-      <h4>{{request.user.first_name}}</h4>
+      <h4 style="color: #728c69;">{{request.user.first_name}}</h4>
 
     </center>
 
-    <a href="/ngo-dashboard"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
-    <a href="/ngo-donation"><i class="fas fa-address-card"></i><span>Donation</span></a>
-    <a href="/ngo-notice"><i class="fas fa-bullhorn"></i><span>Notice</span></a>
+    <a style="color: black;" href="/ngo-dashboard"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+    <a style="color: black;" href="/ngo-donation"><i class="fas fa-address-card"></i><span>Donation</span></a>
+    <a style="color: black;" href="/ngo-notice"><i class="fas fa-bullhorn"></i><span>Notice</span></a>
 
 
   </div>
